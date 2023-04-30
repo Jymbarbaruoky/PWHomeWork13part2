@@ -1,0 +1,42 @@
+{% extends "quotes/base.html" %}
+
+{% block content %}
+
+<div>
+    <h2>Sign Up</h2>
+</div>
+
+<form action="{% url 'users:signup' %}" method="post" accept-charset="utf-8">
+    {% csrf_token %}
+    <div class="row">
+        <div class="form-group col-xs-3">
+            <label> Username:</label>
+            <p>{{ form.username }}</p>
+            <span>{{ form.errors.username }}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-3">
+            <label>Password:</label>
+            <p>{{ form.password1 }}</p>
+            <span>{{ form.errors.password1 }}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-3">
+            <label>Password:</label>
+            <p>{{ form.password2 }}</p>
+            <span>{{ form.errors.password2 }}</span>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="reset" class="btn btn-secondary">Reset</button>
+    <div>
+        <label> Email:
+            {{ form.email }}
+        </label>
+        <span>{{ form.errors.email }}</span>
+    </div>
+</form>
+
+{% endblock %}

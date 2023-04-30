@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "pwhomework13part2"
+version = "0.1.0"
+description = ""
+authors = ["Jymbarbaruoky <116517553+Jymbarbaruoky@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "pwhomework13part2"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.2"
+pymongo = "^4.3.3"
+psycopg2 = "^2.9.6"
+django-environ = "^0.10.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

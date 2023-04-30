@@ -1,0 +1,34 @@
+{% extends "quotes/base.html" %}
+
+{% block content %}
+
+<h2>Add quote</h2>
+
+<form action="{% url 'quotes:add_quote' %}" method="post" accept-charset="utf-8">
+    {% csrf_token %}
+    <div class="row">
+        <div class="form-group col-xs-3">
+            <label>Quote:</label>
+            <p>{{form.quote}}</p>
+            <span>{{ form.errors.quote }}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-3">
+            <label>Author:</label>
+            <p>{{form.author}}</p>
+            <span>{{ form.errors.author }}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-3">
+            <label>Tags:</label>
+            <p>{{form.tags}}</p>
+            <span>{{ form.errors.tags }}</span>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="reset" class="btn btn-secondary">Reset</button>
+</form>
+
+{% endblock %}
